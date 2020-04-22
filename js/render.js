@@ -193,7 +193,7 @@
         let toPlayAudio = (path) => {
             let audio = new Audio();
             audio.preload = 'auto';
-            audio.src = `../assets/audio/${path}.mp3`;
+            audio.src = `./assets/audio/${path}.mp3`;
             audio.play();
         }
 
