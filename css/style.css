@@ -68,13 +68,24 @@ body {
   position: sticky;
 }
 .header .header__container .header__burger-button--active {
-  position: sticky;
-  top: 20px;
+  position: fixed;
+  top: 60px;
+}
+.header .header__container .header__input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 22px;
+  color: #a1a0a0;
+}
+.header .header__container .header__input-container .input-container__title--active {
+  color: white;
 }
 .header .header__container .header__play-mode-handler {
   position: relative;
   transform: scale(0.75);
   z-index: 5;
+  /*margin-right: 100px;*/
 }
 .header .header__container .header__play-mode-handler .toggleWrapper input {
   position: absolute;
@@ -264,7 +275,7 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.8s;
+  transition: transform 0.7s;
   transform-style: preserve-3d;
 }
 .card-list .card-list__play-item .play-item__wrapper .play-item__front,
@@ -379,4 +390,18 @@ body {
 .card-list .card-list__table .card-list__table-data {
   min-width: 50px;
   background-color: #3db8bd;
+}
+@media (max-width: 721px) {
+  #popup-container {
+    width: 50% !important;
+  }
+}
+@media (max-width: 721px) and (max-width: 540px) {
+  .header__title {
+    visibility: hidden;
+    width: 2px;
+  }
+  #popup-list {
+    font-size: 16px;
+  }
 }

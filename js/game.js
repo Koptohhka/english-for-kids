@@ -2,23 +2,24 @@
     const maincardContainer = document.getElementById('main-card-container');
 
     let currentAudioPathCounter = 1;
-    //let succesCounter = 0;
     let errorCounter = 0;
 
     let showResultPopup = () => {
         let playModeButton = document.getElementById('play-mode-button');
-
         let description = '';
         let mistakes = '';
         let parryImagePath = '';
+        let audioPath = '';
 
         if (errorCounter === 0) {
             description = 'Excellent :)';
             parryImagePath = 'cool-parry';
+            audioPath = 'succes';
         } else {
             mistakes = errorCounter;
             description = `You made ${mistakes} errors :(`;
             parryImagePath = 'cry-parry';
+            audioPath = 'failure';
         }
 
         let resultMarckup = `<div class="card-list__game-result">
@@ -26,46 +27,22 @@
         <img src="assets/img/${parryImagePath}.jpg" alt="" class="game-result__image">
         </div>`;
 
-        maincardContainer.insertAdjacentHTML('afterbegin', resultMarckup);
-        //maincardContainer.childNodes[1].style.display = 'none';
-        console.log(maincardContainer.childNodes);
-        maincardContainer.childNodes[1].style.display = 'none';
-        maincardContainer.childNodes[2].style.display = 'none';
+        maincardContainer.innerHTML = resultMarckup;
+        window.render.toPlayAudio(audioPath);
 
-        playModeButton.removeEventListener('click', repeatButtonEventFunction);
-        playModeButton.innerHTML = '';
-        playModeButton.textContent = 'Play!';
-        playModeButton.classList.remove('card-list__play-button--repeate-mode');
+        currentAudioPathCounter = 1;
+        errorCounter = 0;
 
-        playModeButton.addEventListener('click', window.playModeButtonEventFunction);
-        maincardContainer.removeEventListener('click', gameModeEventFunction);
-
-        let toClearPlayCardsClasses = () => {
-            let playCardsArray = document.querySelectorAll('.card-list__play-item--game-mode');
-            console.log(playCardsArray);
-            playCardsArray.forEach((it) => {
-                it.querySelector('.card-list__play-item--disabled').classList.remove('card-list__play-item--disabled');
-            });
-        }
-        toClearPlayCardsClasses();
-
-        let closeResultPopupEventFunction = (evt) => {
+        let showResultPopupEventFunc = (evt) => {
             if (evt.target.classList.contains('play-item__image--game-mode')) {
-                console.log(false);
-            } else {
-                maincardContainer.childNodes[1].style.display = 'flex';
-                maincardContainer.childNodes[2].style.display = 'block';
-                maincardContainer.childNodes[0].remove();
 
-                document.removeEventListener('click', closeResultPopupEventFunction);
+            } else {
+                window.toRenderApp();
+                document.removeEventListener('click', showResultPopupEventFunc);
             }
         }
 
-        document.addEventListener('click', closeResultPopupEventFunction);
-
-        currentAudioPathCounter = 1;
-        succesCounter = 0;
-        errorCounter = 0;
+        document.addEventListener('click', showResultPopupEventFunc);
     }
 
     let repeatButtonEventFunction = () => {
@@ -87,12 +64,10 @@
                 }
 
                 currentAudioPathCounter += 1;
-                succesCounter++;
             } else {
                 window.render.toPlayAudio('error');
                 errorCounter++;
             }
-            console.log(gameArray[currentAudioPathCounter - 1]);
         }
     }
 

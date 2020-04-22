@@ -20,23 +20,17 @@
         "imageClass": "image-wrapper--animal-one",
         "cardTitle": "animals (set A)"
     }, {
-        "imageClass": "image-wrapper--clothes",
-        "cardTitle": "clothes"
-    }, {
         "imageClass": "image-wrapper--animal-two",
         "cardTitle": "animals (set B)"
+    },{
+        "imageClass": "image-wrapper--clothes",
+        "cardTitle": "clothes"
     }, {
         "imageClass": "image-wrapper--action-one ",
         "cardTitle": "action(set A)"
     }, {
         "imageClass": "image-wrapper--action-two",
         "cardTitle": "action(set B)"
-    }, {
-        "imageClass": "image-wrapper--sing",
-        "cardTitle": "action"
-    }, {
-        "imageClass": "test",
-        "cardTitle": "test"
     }]
 
     const playCardsData = {
@@ -104,16 +98,16 @@
             "ruCaption": "собака"
         }, {
             "imageName": "chicken",
-            "ruCaption": "улыбка"
+            "ruCaption": "курица"
         }, {
             "imageName": "chick",
-            "ruCaption": "смех"
+            "ruCaption": "цыплёнок"
         }, {
-            "imageName": "sad",
-            "ruCaption": "грустный"
+            "imageName": "turtle",
+            "ruCaption": "черепаха"
         }, {
-            "imageName": "happy",
-            "ruCaption": "счастливый"
+            "imageName": "frog",
+            "ruCaption": "лягушка"
         }],
         "clothes": [{
             "imageName": "blouse",
@@ -140,55 +134,55 @@
             "imageName": "shoe",
             "ruCaption": "туфли"
         }],
-        "cardId": [{
-            "imageName": "angry",
-            "ruCaption": "злой"
+        "action(set A)": [{
+            "imageName": "swim",
+            "ruCaption": "плавать"
         }, {
-            "imageName": "scared",
-            "ruCaption": "испуганный"
+            "imageName": "skip",
+            "ruCaption": "пропускать"
         }, {
-            "imageName": "tired",
-            "ruCaption": "Уставший"
+            "imageName": "sing",
+            "ruCaption": "петь"
         }, {
-            "imageName": "surprised",
-            "ruCaption": "удивленный"
+            "imageName": "play",
+            "ruCaption": "играть"
         }, {
-            "imageName": "smile",
-            "ruCaption": "улыбка"
+            "imageName": "cry",
+            "ruCaption": "плакать"
         }, {
-            "imageName": "laugh",
-            "ruCaption": "смех"
+            "imageName": "run",
+            "ruCaption": "бегать"
         }, {
-            "imageName": "sad",
-            "ruCaption": "грустный"
+            "imageName": "open",
+            "ruCaption": "открывать"
         }, {
-            "imageName": "happy",
-            "ruCaption": "счастливый"
+            "imageName": "ride",
+            "ruCaption": "ехать"
         }],
-        "cardId": [{
-            "imageName": "angry",
-            "ruCaption": "злой"
+        "action(set B)": [{
+            "imageName": "point",
+            "ruCaption": "указывать"
         }, {
-            "imageName": "scared",
-            "ruCaption": "испуганный"
+            "imageName": "draw",
+            "ruCaption": "рисовать"
         }, {
-            "imageName": "tired",
-            "ruCaption": "Уставший"
+            "imageName": "dance",
+            "ruCaption": "танцевать"
         }, {
-            "imageName": "surprised",
-            "ruCaption": "удивленный"
+            "imageName": "fish",
+            "ruCaption": "ловить рыбу"
         }, {
-            "imageName": "smile",
-            "ruCaption": "улыбка"
+            "imageName": "hug",
+            "ruCaption": "обнимать"
         }, {
-            "imageName": "laugh",
-            "ruCaption": "смех"
+            "imageName": "jump",
+            "ruCaption": "прыгать"
         }, {
-            "imageName": "sad",
-            "ruCaption": "грустный"
+            "imageName": "fly",
+            "ruCaption": "летать"
         }, {
-            "imageName": "happy",
-            "ruCaption": "счастливый"
+            "imageName": "dive",
+            "ruCaption": "нырять"
         }],
         "cardId": [{
             "imageName": "angry",
