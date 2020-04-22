@@ -149,7 +149,7 @@
             data.forEach((it) => {
                 let playCardItem = `<li class="card-list__play-item--game-mode">
                 <div data-image="${it.imageName}" class="play-item__image--game-mode"
-                    style="background: url('../assets/img/${it.imageName}.jpg') no-repeat;"></div>
+                    style="background: url('./assets/img/${it.imageName}.jpg') no-repeat;"></div>
                     <div></div>
                 </li>`;
                 playCardItemsArr.push(playCardItem);
