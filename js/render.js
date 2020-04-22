@@ -97,7 +97,7 @@
                 } else {
                     renderMainCards(window.data.mainCardsData);
                 }
-                closePopup();
+                closePopup(); // это едрить ее функция из бургер модуля
             });
         }
         renderPopupList(window.data.mainCardsData);
