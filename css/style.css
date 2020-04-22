@@ -219,7 +219,6 @@ body {
 .card-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
   justify-content: center;
   list-style: none;
 }
@@ -231,6 +230,7 @@ body {
   border-radius: 10px;
   padding-top: 40px;
   cursor: pointer;
+  margin: 10px;
 }
 .card-list .card-list__item .card-title {
   text-align: center;
@@ -270,6 +270,7 @@ body {
   height: 260px;
   perspective: 1000px;
   cursor: pointer;
+  margin: 10px;
 }
 .card-list .card-list__play-item .play-item__wrapper {
   position: relative;
@@ -323,7 +324,7 @@ body {
 .card-list .play-cards-wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
+  margin: 10px;
   justify-content: center;
   list-style: none;
 }
@@ -335,6 +336,7 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
   cursor: pointer;
   position: relative;
+  margin: 10px;
 }
 .card-list .card-list__play-item--game-mode .play-item__image--game-mode {
   width: 100%;
