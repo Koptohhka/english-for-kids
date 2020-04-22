@@ -123,11 +123,11 @@
                 let playCardItem = `<li class="card-list__play-item">
                 <div class="play-item__wrapper">
                     <div class="play-item__front">
-                        <div class="play-item__image" style="background: url('./assets/img/${it.imageName}.jpg') no-repeat;"></div>
+                        <div class="play-item__image" style="background: url('../assets/img/${it.imageName}.jpg') no-repeat;"></div>
                         <p class="play-item__title">${it.imageName}<i class="play-item__repeat-arrow"></i></p>
                     </div>
                     <div class="play-item__back">
-                        <div class="play-item__image" style="background: url('./assets/img/${it.imageName}.jpg') no-repeat;"></div>
+                        <div class="play-item__image" style="background: url('../assets/img/${it.imageName}.jpg') no-repeat;"></div>
                         <p class="play-item__title">${it.ruCaption}</p>
                     </div>
                 </div>

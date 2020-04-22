@@ -307,7 +307,7 @@ body {
   position: relative;
 }
 .card-list .card-list__play-item .play-item__wrapper .play-item__title .play-item__repeat-arrow {
-  background: url('/assets/img/redo-alt-solid.svg') no-repeat;
+  background: url('../assets/img/redo-alt-solid.svg') no-repeat;
   background-size: contain;
   width: 25px;
   height: 25px;

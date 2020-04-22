@@ -1,17 +1,4 @@
 (() => {
-    function MockContructor(cardId) {
-        this.cardId = cardId;
-    }
-
-    let arr = [];
-
-    for (let i = 0; i < 8; i++) {
-        let obj = new MockContructor('test');
-        arr.push(obj);
-    }
-    console.log(arr);
-
-    // код тут стартует
 
     const mainCardsData = [{
         "imageClass": "image-wrapper--emotion",
