@@ -59,7 +59,8 @@
 
             data.forEach((it) => {
                 let cardItem = `<li class="card-list__item" id="${it.cardTitle}">
-                <div class="image-wrapper ${it.imageClass}"></div>
+                <div class="image-wrapper" style="background: url('./assets/img/${it.imageName}.jpg') no-repeat;
+                background-size: cover;"></div>
                 <p class="card-title">${it.cardTitle}</p>
                 </li>`;
                 cardItemsArr.push(cardItem);
@@ -97,7 +98,8 @@
                 } else {
                     renderMainCards(window.data.mainCardsData);
                 }
-                closePopup(); // это едрить ее функция из бургер модуля
+                //closePopup(); // это едрить ее функция из бургер модуля
+                setTimeout(closePopup, 370)
             });
         }
         renderPopupList(window.data.mainCardsData);

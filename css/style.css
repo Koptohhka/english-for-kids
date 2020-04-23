@@ -237,27 +237,6 @@ body {
   font-size: 27px;
   color: #141414;
 }
-.card-list .card-list__item .image-wrapper--emotion {
-  background: url('../assets/img/angry.jpg') no-repeat;
-}
-.card-list .card-list__item .image-wrapper--animal-one {
-  background: url('../assets/img/bird.jpg') no-repeat;
-}
-.card-list .card-list__item .image-wrapper--clothes {
-  background: url('../assets/img/shirt.jpg') no-repeat;
-}
-.card-list .card-list__item .image-wrapper--animal-two {
-  background: url('../assets/img/cat.jpg') no-repeat;
-}
-.card-list .card-list__item .image-wrapper--action-one {
-  background: url('../assets/img/swim.jpg') no-repeat;
-}
-.card-list .card-list__item .image-wrapper--action-two {
-  background: url('../assets/img/point.jpg') no-repeat;
-}
-.card-list .card-list__item .image-wrapper--sing {
-  background: url('../assets/img/sing.jpg') no-repeat;
-}
 .card-list .card-list__item .image-wrapper {
   border-radius: 50%;
   width: 180px;

@@ -1,24 +1,29 @@
 (() => {
 
     const mainCardsData = [{
-        "imageClass": "image-wrapper--emotion",
-        "cardTitle": "emotions"
-    }, {
-        "imageClass": "image-wrapper--animal-one",
-        "cardTitle": "animals (set A)"
-    }, {
-        "imageClass": "image-wrapper--animal-two",
-        "cardTitle": "animals (set B)"
-    },{
-        "imageClass": "image-wrapper--clothes",
-        "cardTitle": "clothes"
-    }, {
-        "imageClass": "image-wrapper--action-one ",
-        "cardTitle": "action(set A)"
-    }, {
-        "imageClass": "image-wrapper--action-two",
-        "cardTitle": "action(set B)"
-    }]
+            "imageName": "angry",
+            "cardTitle": "emotions"
+        }, {
+            "imageName": "bird",
+            "cardTitle": "animals (set A)"
+        }, {
+            "imageName": "cat",
+            "cardTitle": "animals (set B)"
+        }, {
+            "imageName": "blouse",
+            "cardTitle": "clothes"
+        }, {
+            "imageName": "swim",
+            "cardTitle": "action(set A)"
+        }, {
+            "imageName": "point",
+            "cardTitle": "action(set B)"
+        },
+        {
+            "imageName": "eggplant",
+            "cardTitle": "vegetables"
+        }
+    ]
 
     const playCardsData = {
         "emotions": [{
@@ -171,24 +176,24 @@
             "imageName": "dive",
             "ruCaption": "нырять"
         }],
-        "cardId": [{
-            "imageName": "angry",
-            "ruCaption": "злой"
+        "vegetables": [{
+            "imageName": "eggplant",
+            "ruCaption": "баклажан"
         }, {
-            "imageName": "scared",
-            "ruCaption": "испуганный"
+            "imageName": "carrot",
+            "ruCaption": "морковка"
         }, {
-            "imageName": "tired",
-            "ruCaption": "Уставший"
+            "imageName": "cucumber",
+            "ruCaption": "огурец"
         }, {
-            "imageName": "surprised",
-            "ruCaption": "удивленный"
+            "imageName": "pumpkin",
+            "ruCaption": "тыква"
         }, {
-            "imageName": "smile",
-            "ruCaption": "улыбка"
+            "imageName": "beet",
+            "ruCaption": "свекла"
         }, {
-            "imageName": "laugh",
-            "ruCaption": "смех"
+            "imageName": "tomato",
+            "ruCaption": "помидор"
         }, {
             "imageName": "sad",
             "ruCaption": "грустный"
