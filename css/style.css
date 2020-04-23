@@ -229,6 +229,14 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   list-style: none;
+  /*.card-list__play-item--disabled {
+        position: absolute;
+        background: rgba(124, 122, 122, 0.712);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        cursor: auto;
+    }*/
 }
 .card-list .card-list__item {
   width: 270px;
@@ -330,13 +338,15 @@ body {
   height: 100%;
   background-size: contain;
 }
-.card-list .card-list__play-item--disabled {
-  position: absolute;
-  background: rgba(124, 122, 122, 0.712);
-  width: 100%;
-  height: 100%;
-  top: 0;
-  cursor: auto;
+.card-list .card-list__play-item--game-mode .card-list__play-item--disabled {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: url(desaturate.svg#greyscale);
+  filter: gray;
+  -webkit-filter: grayscale(1);
 }
 .card-list .card-list__play-button {
   max-width: 300px;

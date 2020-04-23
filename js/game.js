@@ -51,12 +51,12 @@
 
     let gameModeEventFunction = (evt) => {
         let targetElement = evt.target;
-
-        if (targetElement.classList.contains('play-item__image--game-mode')) {
+        if (targetElement.classList.contains('play-item__image--game-mode') && !targetElement.classList.contains('card-list__play-item--disabled')) {
             if (targetElement.dataset.image === gameArray[currentAudioPathCounter - 1].imageName) {
                 window.render.toPlayAudio('correct');
+                console.log(targetElement);
                 window.render.toAddStatystics(targetElement.dataset.number, 'correctCounter');
-                targetElement.nextElementSibling.classList.add('card-list__play-item--disabled');
+                targetElement.classList.add('card-list__play-item--disabled');
                 if (currentAudioPathCounter !== gameArray.length) {
                     setTimeout(window.render.toPlayAudio, 1000, gameArray[currentAudioPathCounter].imageName);
                 } else {

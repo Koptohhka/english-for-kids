@@ -102,6 +102,10 @@
                     toRemoveActiveClass(popupList.childNodes, 'popup-list-item--active', targetElement);
 
                     if (targetElement.textContent === 'Statistics') {
+                        if (localStorage.getItem('data') === null) {
+                            localStorage.setItem('data', JSON.stringify(window.data.playCardsData));
+                        }
+
                         let dataObj = localStorage.getItem('data');
                         renderStatysticsTable(JSON.parse(dataObj));
                     } else if (targetElement.textContent !== 'Main page') {
@@ -164,6 +168,11 @@
             alreadyRenderedcardsFlag = true;
         }
 
+        let resertButtonEventFunction = () => {
+            localStorage.clear()
+            renderStatysticsTable(window.data.playCardsData);
+        }
+
         let renderStatysticsTable = (data) => {
             let tableRowsArray = [`<tr class="card-list__table-row">
             <th class="card-list__table-data card-list__table-data--title-data">Category</td>
@@ -192,10 +201,7 @@
             mainCardsContainer.innerHTML = `<button id="table-reset-button" class="card-list__table--reset-button">Reset</button>
             <table class="card-list__table">${tableRowsArray.join('')}</table>`;
 
-            document.getElementById('table-reset-button').addEventListener('click', (evt) => {
-                localStorage.clear()
-                renderStatysticsTable(window.data.playCardsData);
-            });
+            document.getElementById('table-reset-button').addEventListener('click', resertButtonEventFunction);
         }
 
         let renderGameModePlayCards = (data) => {
@@ -253,8 +259,12 @@
         }
 
         let toAddStatystics = (key, clickType) => {
-            window.data.playCardsData[currentCardId][key][clickType] += 1; //эта функция добавляет + 1 к нужному полю, не обращай внимание
-            localStorage.setItem('data', JSON.stringify(window.data.playCardsData)); //а тут я перепзаписываю
+            if (localStorage.getItem('data') === null) {
+                localStorage.setItem('data', JSON.stringify(window.data.playCardsData));
+            } 
+            let dataObj = JSON.parse(localStorage.getItem('data'));
+            dataObj[currentCardId][key][clickType] += 1;
+            localStorage.setItem('data', JSON.stringify(dataObj)); //а тут я перепзаписываю
         }
 
 

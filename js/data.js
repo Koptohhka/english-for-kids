@@ -397,6 +397,7 @@
     }
 
     if (localStorage.getItem('data') === null) {
+        console.log('ddd');
         localStorage.setItem('data', JSON.stringify(playCardsData));
     }
 
