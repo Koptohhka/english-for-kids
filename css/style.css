@@ -28,8 +28,9 @@ body {
   min-height: 145px;
 }
 .header .header__container .header__title {
-  font-size: 34px;
+  font-size: 40px;
   vertical-align: middle;
+  font-weight: bold;
 }
 .header .header__container .header__burger-button {
   width: 55px;
@@ -209,9 +210,16 @@ body {
 .header .header__popup-menu .popup-list .popup-list-item {
   margin-bottom: 20px;
   cursor: pointer;
+  transition: 0.3s;
+}
+.header .header__popup-menu .popup-list .popup-list-item--active {
+  font-size: 23px;
+  color: #FFA151;
 }
 .header .header__popup-menu .popup-list .popup-list-item:hover {
   text-decoration: underline;
+  font-size: 23px;
+  color: #FFA151;
 }
 .main {
   margin-bottom: 40px;
@@ -356,21 +364,45 @@ body {
 .card-list .card-list__play-button:hover {
   opacity: 0.8;
 }
-.card-list .card-list__game-result .game-result__description {
+.card-list .game-result__description {
   font-size: 40px;
   text-align: center;
   margin: 0 auto 20px;
 }
-.card-list .card-list__game-result .game-result__image {
+.card-list .game-result__image {
   width: 500px;
   height: 400px;
 }
+.card-list .card-list__table--reset-button {
+  width: 150px;
+  height: 50px;
+  border-radius: 9px;
+  font-weight: bold;
+  color: white;
+  font-size: 22px;
+  background-color: #3db8bd;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 20px;
+}
+.card-list .card-list__table--reset-button:hover {
+  box-shadow: 0 10px 20px #3db8bd;
+}
 .card-list .card-list__table {
   width: 100%;
+  color: white;
+  font-weight: 500;
+  font-size: 19px;
+  text-align: center;
 }
 .card-list .card-list__table .card-list__table-data {
   min-width: 50px;
+  background-color: #FFA151;
+}
+.card-list .card-list__table .card-list__table-data--title-data {
   background-color: #3db8bd;
+  height: 34px;
 }
 @media (max-width: 721px) {
   #popup-container {

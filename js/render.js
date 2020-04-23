@@ -75,31 +75,48 @@
         }
         renderMainCards(window.data.mainCardsData);
 
+        let toRemoveActiveClass = (data, Class, targetElement) => {
+            data.forEach((it) => {
+                it.classList.remove(Class);
+            });
+            targetElement.classList.add(Class);
+        }
 
         let renderPopupList = (data) => {
             let popupListItemsArr = [];
-            popupListItemsArr.push(`<li class="popup-list-item">Main page</li>`);
+            popupListItemsArr.push(`<li class="popup-list-item popup-list-item--active">Main page</li>`);
 
             data.forEach((it) => {
                 let popupListItem = `<li class="popup-list-item">${it.cardTitle}</li>`;
                 popupListItemsArr.push(popupListItem);
             });
+
+            popupListItemsArr.push(`<li class="popup-list-item">Statistics</li>`);
             popupList.innerHTML = popupListItemsArr.join('');
 
             popupList.addEventListener('click', (evt) => {
                 let targetElement = evt.target;
-                if (targetElement.textContent !== 'Main page') {
-                    if (!playModeFlag) {
-                        renderPlayCards(window.data.playCardsData[targetElement.textContent]);
+
+                
+                if (targetElement.classList.contains('popup-list-item')) {
+                    toRemoveActiveClass(popupList.childNodes, 'popup-list-item--active', targetElement);
+
+                    if (targetElement.textContent === 'Statistics') {
+                        let dataObj = localStorage.getItem('data');
+                        renderStatysticsTable(JSON.parse(dataObj));
+                    } else if (targetElement.textContent !== 'Main page') {
+                        if (!playModeFlag) {
+                            renderPlayCards(window.data.playCardsData[targetElement.textContent]);
+                        } else {
+                            renderGameModePlayCards(window.data.playCardsData[targetElement.textContent]);
+                        }
+                        currentCardId = targetElement.textContent;
                     } else {
-                        renderGameModePlayCards(window.data.playCardsData[targetElement.textContent]);
+                        renderMainCards(window.data.mainCardsData);
                     }
-                    currentCardId = targetElement.textContent;
-                } else {
-                    renderMainCards(window.data.mainCardsData);
                 }
                 //closePopup(); // это едрить ее функция из бургер модуля
-                setTimeout(closePopup, 370)
+                setTimeout(closePopup, 100)
             });
         }
         renderPopupList(window.data.mainCardsData);
@@ -113,6 +130,7 @@
                     elementAudioPath = targetElement.nextElementSibling.textContent;
                 }
                 toPlayAudio(elementAudioPath);
+                toAddStatystics(targetElement.dataset.number, 'trainCounter');
             } else if (targetElement.classList.contains('play-item__repeat-arrow')) {
                 toFlipPlayCard(targetElement.parentNode.parentNode);
             }
@@ -121,15 +139,17 @@
         let renderPlayCards = (data) => {
             let playCardItemsArr = [];
 
-            data.forEach((it) => {
+            data.forEach((it, i) => {
                 let playCardItem = `<li class="card-list__play-item">
                 <div class="play-item__wrapper">
                     <div class="play-item__front">
-                        <div class="play-item__image" style="background: url('./assets/img/${it.imageName}.jpg') no-repeat;"></div>
-                        <p class="play-item__title">${it.imageName}<i class="play-item__repeat-arrow"></i></p>
+                        <div class="play-item__image" data-number="${i}" style="background: url('./assets/img/${it.imageName}.jpg') no-repeat;
+                        background-size: cover;"></div>
+                        <p class="play-item__title" data-number="${i}">${it.imageName}<i class="play-item__repeat-arrow"></i></p>
                     </div>
                     <div class="play-item__back">
-                        <div class="play-item__image" style="background: url('./assets/img/${it.imageName}.jpg') no-repeat;"></div>
+                        <div class="play-item__image" style="background: url('./assets/img/${it.imageName}.jpg') no-repeat;
+                        background-size: cover;"></div>
                         <p class="play-item__title">${it.ruCaption}</p>
                     </div>
                 </div>
@@ -144,13 +164,46 @@
             alreadyRenderedcardsFlag = true;
         }
 
+        let renderStatysticsTable = (data) => {
+            let tableRowsArray = [`<tr class="card-list__table-row">
+            <th class="card-list__table-data card-list__table-data--title-data">Category</td>
+            <th class="card-list__table-data card-list__table-data--title-data">Word</td>
+            <th class="card-list__table-data card-list__table-data--title-data">Translation</td>
+            <th class="card-list__table-data card-list__table-data--title-data">Train</td>
+            <th class="card-list__table-data card-list__table-data--title-data">Correct</td>
+            <th class="card-list__table-data card-list__table-data--title-data">Wrong</th>
+            </tr>`];
+
+            for (key in data) {
+                let sectionRowsArray = [];
+                data[key].forEach((it) => {
+                    let rowItem = `<tr class="card-list__table-row">
+                    <td class="card-list__table-data">${key}</td>
+                    <td class="card-list__table-data">${it.imageName}</td>
+                    <td class="card-list__table-data">${it.ruCaption}</td>
+                    <td class="card-list__table-data">${it.trainCounter}</td>
+                    <td class="card-list__table-data">${it.correctCounter}</td>
+                    <td class="card-list__table-data">${it.wrongCounter}</td>
+                    </tr>`;
+                    sectionRowsArray.push(rowItem);
+                });
+                tableRowsArray.push(sectionRowsArray.join(''));
+            }
+            mainCardsContainer.innerHTML = `<button id="table-reset-button" class="card-list__table--reset-button">Reset</button>
+            <table class="card-list__table">${tableRowsArray.join('')}</table>`;
+
+            document.getElementById('table-reset-button').addEventListener('click', (evt) => {
+                localStorage.clear()
+                renderStatysticsTable(window.data.playCardsData);
+            });
+        }
 
         let renderGameModePlayCards = (data) => {
             let playCardItemsArr = [];
 
-            data.forEach((it) => {
+            data.forEach((it, i) => {
                 let playCardItem = `<li class="card-list__play-item--game-mode">
-                <div data-image="${it.imageName}" class="play-item__image--game-mode"
+                <div data-image="${it.imageName}" data-number="${i}" class="play-item__image--game-mode"
                     style="background: url('./assets/img/${it.imageName}.jpg') no-repeat;"></div>
                     <div></div>
                 </li>`;
@@ -199,10 +252,16 @@
             audio.play();
         }
 
+        let toAddStatystics = (key, clickType) => {
+            window.data.playCardsData[currentCardId][key][clickType] += 1; //эта функция добавляет + 1 к нужному полю, не обращай внимание
+            localStorage.setItem('data', JSON.stringify(window.data.playCardsData)); //а тут я перепзаписываю
+        }
+
 
         window.render = {
             toPlayAudio: toPlayAudio,
-            renderMainCards: renderMainCards
+            renderMainCards: renderMainCards,
+            toAddStatystics: toAddStatystics
         }
     }
     window.toRenderApp();

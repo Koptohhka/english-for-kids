@@ -25,181 +25,349 @@
         }
     ]
 
-    const playCardsData = {
+    let playCardsData = {
         "emotions": [{
             "imageName": "angry",
-            "ruCaption": "злой"
+            "ruCaption": "злой",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "scared",
-            "ruCaption": "испуганный"
+            "ruCaption": "испуганный",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "tired",
-            "ruCaption": "Уставший"
+            "ruCaption": "Уставший",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "surprised",
-            "ruCaption": "удивленный"
+            "ruCaption": "удивленный",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "smile",
-            "ruCaption": "улыбка"
+            "ruCaption": "улыбка",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "laugh",
-            "ruCaption": "смех"
+            "ruCaption": "смех",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "sad",
-            "ruCaption": "грустный"
+            "ruCaption": "грустный",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "happy",
-            "ruCaption": "счастливый"
+            "ruCaption": "счастливый",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }],
         "animals (set A)": [{
             "imageName": "bird",
-            "ruCaption": "птица"
+            "ruCaption": "птица",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "rabbit",
-            "ruCaption": "кролик"
+            "ruCaption": "кролик",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "pig",
-            "ruCaption": "свинья"
+            "ruCaption": "свинья",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "lion",
-            "ruCaption": "лев"
+            "ruCaption": "лев",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "mouse",
-            "ruCaption": "мышь"
+            "ruCaption": "мышь",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "horse",
-            "ruCaption": "лошадь"
+            "ruCaption": "лошадь",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "dolphin",
-            "ruCaption": "дельфин"
+            "ruCaption": "дельфин",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "fish",
-            "ruCaption": "рыба"
+            "ruCaption": "рыба",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }],
         "animals (set B)": [{
             "imageName": "cat",
-            "ruCaption": "кот"
+            "ruCaption": "кот",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "giraffe",
-            "ruCaption": "жираф"
+            "ruCaption": "жираф",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "sheep",
-            "ruCaption": "овца"
+            "ruCaption": "овца",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "dog",
-            "ruCaption": "собака"
+            "ruCaption": "собака",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "chicken",
-            "ruCaption": "курица"
+            "ruCaption": "курица",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "chick",
-            "ruCaption": "цыплёнок"
+            "ruCaption": "цыплёнок",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "turtle",
-            "ruCaption": "черепаха"
+            "ruCaption": "черепаха",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "frog",
-            "ruCaption": "лягушка"
+            "ruCaption": "лягушка",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }],
         "clothes": [{
             "imageName": "blouse",
-            "ruCaption": "блузка"
+            "ruCaption": "блузка",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "dress",
-            "ruCaption": "платье"
+            "ruCaption": "платье",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "coat",
-            "ruCaption": "пальто"
+            "ruCaption": "пальто",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "pants",
-            "ruCaption": "штаны"
+            "ruCaption": "штаны",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "shirt",
-            "ruCaption": "рубашка"
+            "ruCaption": "рубашка",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "skirt",
-            "ruCaption": "юбка"
+            "ruCaption": "юбка",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "boot",
-            "ruCaption": "ботинки"
+            "ruCaption": "ботинки",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "shoe",
-            "ruCaption": "туфли"
+            "ruCaption": "туфли",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }],
         "action(set A)": [{
             "imageName": "swim",
-            "ruCaption": "плавать"
+            "ruCaption": "плавать",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "skip",
-            "ruCaption": "пропускать"
+            "ruCaption": "пропускать",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "sing",
-            "ruCaption": "петь"
+            "ruCaption": "петь",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "play",
-            "ruCaption": "играть"
+            "ruCaption": "играть",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "cry",
-            "ruCaption": "плакать"
+            "ruCaption": "плакать",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "run",
-            "ruCaption": "бегать"
+            "ruCaption": "бегать",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "open",
-            "ruCaption": "открывать"
+            "ruCaption": "открывать",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "ride",
-            "ruCaption": "ехать"
+            "ruCaption": "ехать",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }],
         "action(set B)": [{
             "imageName": "point",
-            "ruCaption": "указывать"
+            "ruCaption": "указывать",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "draw",
-            "ruCaption": "рисовать"
+            "ruCaption": "рисовать",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "dance",
-            "ruCaption": "танцевать"
+            "ruCaption": "танцевать",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "fish",
-            "ruCaption": "ловить рыбу"
+            "ruCaption": "ловить рыбу",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "hug",
-            "ruCaption": "обнимать"
+            "ruCaption": "обнимать",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "jump",
-            "ruCaption": "прыгать"
+            "ruCaption": "прыгать",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "fly",
-            "ruCaption": "летать"
+            "ruCaption": "летать",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "dive",
-            "ruCaption": "нырять"
+            "ruCaption": "нырять",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }],
         "vegetables": [{
             "imageName": "eggplant",
-            "ruCaption": "баклажан"
+            "ruCaption": "баклажан",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "carrot",
-            "ruCaption": "морковка"
+            "ruCaption": "морковка",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "cucumber",
-            "ruCaption": "огурец"
+            "ruCaption": "огурец",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "pumpkin",
-            "ruCaption": "тыква"
+            "ruCaption": "тыква",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "beet",
-            "ruCaption": "свекла"
+            "ruCaption": "свекла",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "tomato",
-            "ruCaption": "помидор"
+            "ruCaption": "помидор",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "sad",
-            "ruCaption": "грустный"
+            "ruCaption": "грустный",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }, {
             "imageName": "happy",
-            "ruCaption": "счастливый"
+            "ruCaption": "счастливый",
+            "trainCounter": 0,
+            "correctCounter": 0,
+            "wrongCounter": 0 
         }],
         "cardId": [{
             "imageName": "angry",
@@ -228,6 +396,9 @@
         }],
     }
 
+    if (localStorage.getItem('data') === null) {
+        localStorage.setItem('data', JSON.stringify(playCardsData));
+    }
 
     window.data = {
         mainCardsData: mainCardsData,

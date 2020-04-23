@@ -55,6 +55,7 @@
         if (targetElement.classList.contains('play-item__image--game-mode')) {
             if (targetElement.dataset.image === gameArray[currentAudioPathCounter - 1].imageName) {
                 window.render.toPlayAudio('correct');
+                window.render.toAddStatystics(targetElement.dataset.number, 'correctCounter');
                 targetElement.nextElementSibling.classList.add('card-list__play-item--disabled');
                 if (currentAudioPathCounter !== gameArray.length) {
                     setTimeout(window.render.toPlayAudio, 1000, gameArray[currentAudioPathCounter].imageName);
@@ -67,6 +68,7 @@
             } else {
                 window.render.toPlayAudio('error');
                 errorCounter++;
+                window.render.toAddStatystics(targetElement.dataset.number, 'wrongCounter');
             }
         }
     }
